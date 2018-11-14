@@ -1,7 +1,9 @@
 package com.techelevator.npgeek.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -34,8 +36,28 @@ public class JdbcParkDAO implements ParkDAO {
 
 	@Override
 	public Park getPark(String parkCode) {
-		
-		return null;
+		String sqlQuery = "SELECT * FROM park WHERE parkcode = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlQuery, parkCode);
+		Park park = null;
+		if (results.next()) {
+			park = getParkFromRow(results);
+		}
+		return park;
+	}
+	
+	@Override
+	public Map<Park, Integer> surveyResults() {
+		Map<Park, Integer> surveyResults = new HashMap<>();
+		String sqlQuery = "SELECT park.*, count(*) as ct FROM "
+				+ "park INNER JOIN survey_result ON park.parkcode = survey_results.parkcode "
+				+ "GROUP BY parkcode ORDER BY ct DESC";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlQuery);
+		while (results.next()) {
+			int voteCount = results.getInt("ct");
+			Park p = getParkFromRow(results);
+			surveyResults.put(p,voteCount);
+		}
+		return surveyResults;
 	}
 	
 	private Park getParkFromRow(SqlRowSet results) {

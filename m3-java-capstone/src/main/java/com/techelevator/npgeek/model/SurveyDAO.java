@@ -6,5 +6,4 @@ public interface SurveyDAO {
 
 	public void save(Survey survey);
 	
-	public Map<Park,Integer> surveyResults();
 }
