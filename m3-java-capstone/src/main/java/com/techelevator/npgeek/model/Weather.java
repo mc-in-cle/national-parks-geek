@@ -24,30 +24,32 @@ public class Weather {
 		this.forecastDay = forecastDay;
 	}
 
-	public int getLowF() {
-		return low;
+	public int getLow(String scale) {
+		if (scale.equals("c")) {
+			int lowC = (int) (((high - 32) * 5) / 9.0);
+			return lowC;
+		} else {
+			return low;
+		}
 	}
 
 	public void setLowF(int low) {
 		this.low = low;
 	}
 
-	public int getHighF() {
-		return high;
+	public int getHigh(String scale) {
+		if (scale.equalsIgnoreCase("f")) {
+			int highC = (int) (((high - 32) * 5) / 9.0);
+			return highC;
+		} else {
+			return high;
+		}
 	}
 
 	public void setHighF(int high) {
 		this.high = high;
 	}
-	
-	public int getHighC() {
-		int highC = (int)(((high - 32) * 5) / 9.0);
-		return highC;
-	}
-	public int getLowC() {
-		int lowC = (int)(((high - 32) * 5) / 9.0);
-		return lowC;
-	}
+
 
 	public String getForecast() {
 		return forecast;

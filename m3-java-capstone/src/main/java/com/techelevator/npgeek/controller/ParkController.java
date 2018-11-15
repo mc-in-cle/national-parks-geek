@@ -24,12 +24,15 @@ public class ParkController {
 	
 	@Autowired
 	private JdbcParkDAO parkDAO;
+	@Autowired
 	private JdbcWeatherDAO weatherDAO;
+	private String tempPreference = "F";
 	
 	@RequestMapping("/")
 	public String showParksOverview(ModelMap model) {
 		List<Park> parksList = parkDAO.getAllParks();
 		model.addAttribute("parksList", parksList);
+		model.addAttribute("tempPreference", tempPreference);
 		return "home";
 	}
 	

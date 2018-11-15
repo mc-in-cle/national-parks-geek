@@ -16,7 +16,7 @@
 				<img class="parkImg" src="${parkImgUrl }" alt="${park.parkName }"/>
 			</td>
 			<td>
-				<a href="/parkDetails?parkCode=${park.parkCode }">
+				<a href="parkDetails?parkCode=${park.parkCode }">
 					<h3 class="parkInfoHeader">${park.parkName } &mdash; ${park.state }</h3>
 				</a>
 				<p class="parkDescription">${park.parkDescription }</p>
