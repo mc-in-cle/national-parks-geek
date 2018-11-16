@@ -61,53 +61,100 @@ nav a {
 	font-weight: bold;
 }
 
+#temperature-buttons p{
+	float:right;
+	margin-right: 15px;
+	color:white;
+	font-weight:bold;
+}
+
+
 #main-content {
 	background-color: white;
 	margin-right: 20px;
 	margin-left: 20px;
-	padding: 15px;
+	margin-bottom: 30px;
+	padding: 20px;
 	border-radius: 20px;
 }
 
+#parkInfoTable td{
+	padding: 20px;
+}
 
+.quote{
+	text-align: center;
+}
+
+.quotesource{
+	text-align: center;
+}
+
+#park-info .tableHeader{
+	font-weight: bold;
+	padding-right: 15px;
+}
 
 .weather {
 	display: flex;
 	align-items: center;
+	margin-top: 40px;
 }
+
+
+.todayWeather{
+	width: 28%;
+}
+
+.todayWeather p{
+	margin-left:10%;
+}
+
+.todayWeather h4{
+	text-align:center;
+	margin: 0px;
+}
+
 
 .todayWeather img{
-	height: 300px;
-	width: auto;
+	/*height: 300px;
+	width: auto;*/
+	width: 100%;
+	height:auto;
 }
+
+.weekDayWeather{
+	width: 17%;
+}
+
+.weekDayWeather p{
+	margin-left: 20%;
+}
+
 
 .weekDayWeather img{
-	height: 200px;
-	width: auto;
+	/*height: 200px;
+	width: auto;*/
+	width: 100%;
+	height:auto;
 }
 
-form:form{
-	display:table;
-}
 .formItem {
 	margin-top:10px;
 	margin-bottom: 10px;
-	width:100px;
+}
+
+.formItem label{
 	text-align: right;
-	display:table-row;
 }
 
-
-label{
-	display:table-cell;
+.formItem input{
+	margin-left: 15px;
+	margin-right: 7px;
 }
 
-select {
-	display: table-cell;
-}
-
-input {
-	display: table-cell;
+.error{
+	color:red;
 }
 
 .parkImg {

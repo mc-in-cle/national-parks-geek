@@ -10,7 +10,7 @@
 	
 	<c:forEach var="park" items="${parksList }">
 		<c:url var="parkImgUrl" value="img/parks/${park.parkCode.toLowerCase()}.jpg"/>
-		<table class="parkInfoTable">
+		<table id="parkInfoTable">
 		<tr>
 			<td>
 				<img class="parkImg" src="${parkImgUrl }" alt="${park.parkName }"/>

@@ -25,9 +25,10 @@
 		<div id="temperature-buttons">
 			<ul>
 				<c:url value="/toggleTemp" var="tempURL"/>
-				<li><a href="${tempURL }?format=F">F</a></li>
-				<li><a href="${tempURL }?format=C">C</a></li>
+				<li><a href="${tempURL }?format=C">&#176;C</a></li>
+				<li><a href="${tempURL }?format=F">&#176;F</a></li>
 			</ul>
+				<p>Temperature Preference:</p>
 		</div>
 	</nav>
 	

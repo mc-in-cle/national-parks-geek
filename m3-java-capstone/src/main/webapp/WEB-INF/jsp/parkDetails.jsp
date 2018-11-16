@@ -14,15 +14,15 @@
 
 		<h2 class="parkInfoHeader">${park.parkName }&mdash; ${park.state }</h2>
 
-		<p class="entryfee">Entry Fee: $${park.entryFee}</p>
+		<h3 class="entryfee">Entry Fee: $${park.entryFee}</h3>
 
 		<p class="parkDescription">${park.parkDescription }</p>
 
-		<p class="quote">${park.quote}</p>
+		<p class="quote"><em>"${park.quote}"</em></p>
 
-		<p class="quotesource"> -${park.quoteSource}</p>
+		<p class="quotesource"><em>-${park.quoteSource}</em></p>
 
-		<table>
+		<table id="park-info">
 			<tr>
 				<td class="tableHeader">Year Founded:</td>
 				<td class="tableInfo">${park.yearFounded}</td>
@@ -57,15 +57,15 @@
 		<div class="weather">
 			<div class="todayWeather">
 				<c:set var="today" value="${weatherForecast.get(0)}" />
-				<h3>Today's Weather:</h3>
+				<h4>Today's Weather for<br>${park.parkName }:</h4>
 				<c:set var="imageName" value="${today.forecast}" />
 				<c:if test="${imageName.equals('partly cloudy')}">
 					<c:set var="imageName" value="partlyCloudy" />
 				</c:if>
 				<c:url var="weatherImgUrl" value="img/weather/${imageName}.png" />
 				<img class="weatherImg" src="${weatherImgUrl}" alt="${imageName}" />
-			 <p class="high">High: ${today.getHigh(tempPreference)} </p>
-			<p class="low"> Low: ${today.getLow(tempPreference)} </p>
+			 <p class="high">High: ${today.getHigh(tempPreference)}&#176;${tempPreference }</p>
+			<p class="low"> Low: ${today.getLow(tempPreference)}&#176;${tempPreference }</p>
 			
 			<p class="weatherMessage"> ${today.message} </p>
 			
@@ -81,8 +81,8 @@
 				<c:url var="weatherImgUrl" value="img/weather/${imageName}.png" />
 				<img class="weatherImg" src="${weatherImgUrl}" alt="${imageName}" />
 				
-			 <p class="high">High: ${today.getHigh(tempPreference)} </p>
-			<p class="low"> Low: ${today.getLow(tempPreference)} </p>
+			 <p class="high">High: ${today.getHigh(tempPreference)}&#176;${tempPreference }</p>
+			<p class="low"> Low: ${today.getLow(tempPreference)}&#176;${tempPreference }</p>
 			</div>
 		</c:forEach>
 		</div>

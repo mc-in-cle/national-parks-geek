@@ -32,7 +32,7 @@
 					<option value=${s }>${s }</option>
 				</c:forEach>
 			</select>
-			<form:errors path="state" cssClass="state"/>
+			<form:errors path="state" cssClass="error"/>
 		</div>
 		<div class="formItem">
 			<label for="activityLevel">Your activity level:</label> 
@@ -40,7 +40,7 @@
 			<input type="radio" name="activityLevel" value="Active">Active
 			<input type="radio" name="activityLevel" value="Inactive">Inactive
 			<input type="radio" name="activityLevel" value="Sedentary">Sedentary
-			<form:errors path="activityLevel" cssClass="activityLevel"/>
+			<form:errors path="activityLevel" cssClass="error"/>
 		</div>
 		<div class="formItem">
 			<input type="submit" value="Submit"/>
