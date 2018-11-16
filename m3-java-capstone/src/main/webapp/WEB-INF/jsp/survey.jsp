@@ -6,6 +6,8 @@
 </c:import>
 
 <body>
+
+<div id = "main-content">
 	<h2>Participate in the Survey</h2>
 	<form:form action="survey" method="POST" modelAttribute="survey">
 		<div class="formItem">
@@ -44,5 +46,6 @@
 			<input type="submit" value="Submit"/>
 		</div>
 	</form:form>
+	</div>
 </body>
 </html>

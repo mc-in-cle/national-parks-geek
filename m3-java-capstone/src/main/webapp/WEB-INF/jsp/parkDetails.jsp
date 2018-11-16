@@ -20,7 +20,7 @@
 
 		<p class="quote">${park.quote}</p>
 
-		<p class="quotesource">${park.quoteSource}</p>
+		<p class="quotesource"> -${park.quoteSource}</p>
 
 		<table>
 			<tr>
@@ -54,7 +54,7 @@
 
 		</table>
 
-		<div>
+		<div class="weather">
 			<div class="todayWeather">
 				<c:set var="today" value="${weatherForecast.get(0)}" />
 				<h3>Today's Weather:</h3>
@@ -70,8 +70,9 @@
 			<p class="weatherMessage"> ${today.message} </p>
 			
 			</div>
-		<div>
+		
 		<c:forEach begin="1" end="4" var="day">
+		<div class="weekDayWeather">
 			<c:set var="today" value="${weatherForecast.get(day)}" />
 				<c:set var="imageName" value="${today.forecast}" />
 				<c:if test="${imageName.equals('partly cloudy')}">
@@ -82,10 +83,11 @@
 				
 			 <p class="high">High: ${today.getHigh(tempPreference)} </p>
 			<p class="low"> Low: ${today.getLow(tempPreference)} </p>
+			</div>
 		</c:forEach>
 		</div>
 			
 		</div> 
-	</div>
+	
 </body>
 </html>
