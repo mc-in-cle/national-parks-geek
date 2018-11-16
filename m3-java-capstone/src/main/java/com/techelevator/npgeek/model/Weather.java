@@ -25,8 +25,8 @@ public class Weather {
 	}
 
 	public int getLow(String scale) {
-		if (scale.equals("c")) {
-			int lowC = (int) (((high - 32) * 5) / 9.0);
+		if (scale.equalsIgnoreCase("c")) {
+			int lowC = (int) (((low - 32) * 5) / 9.0);
 			return lowC;
 		} else {
 			return low;
@@ -38,7 +38,7 @@ public class Weather {
 	}
 
 	public int getHigh(String scale) {
-		if (scale.equalsIgnoreCase("f")) {
+		if (scale.equalsIgnoreCase("c")) {
 			int highC = (int) (((high - 32) * 5) / 9.0);
 			return highC;
 		} else {

@@ -15,9 +15,18 @@
 		</a>
 	</header>
 	<nav>
-		<ul>
-			<li><a href="${homePageURL }">Home</a></li>
-			<li><a href="survey">Survey</a></li>
-		</ul>
+		<div id="main-nav">
+			<ul>
+				<li><a href="${homePageURL }">Home</a></li>
+				<li><a href="survey">Survey</a></li>
+			</ul>
+		</div>
+		<div id="temperature-buttons">
+			<ul>
+				<c:url value="/toggleTemp" var="tempURL"/>
+				<li><a href="${tempURL }?format=F">F</a></li>
+				<li><a href="${tempURL }?format=C">C</a></li>
+			</ul>
+		</div>
 	</nav>
 	

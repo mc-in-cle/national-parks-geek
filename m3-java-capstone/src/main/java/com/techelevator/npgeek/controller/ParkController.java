@@ -47,13 +47,15 @@ public class ParkController {
 
 	@RequestMapping("/surveyResults")
 	public String displaySurveyResults(ModelMap model) {
-		Map<Park, Integer> surveyMap = parkDAO.surveyResults();
-		model.addAttribute("surveyMap",surveyMap);
+		List<Park> surveyList = parkDAO.surveyResults();
+		model.addAttribute("surveyList",surveyList);
 		return "surveyResults";
 	}
 	
-	@RequestMapping(path="/toggleTemp", method=RequestMethod.POST)
-	public String changeTemp (HttpServletRequest request, @RequestParam String format) {
+	@RequestMapping(path="/toggleTemp", method=RequestMethod.GET)
+	public String changeTemp (HttpServletRequest request, ModelMap model, @RequestParam String format) {
+		tempPreference = format;
+		model.addAttribute("tempPreference", format);
 		String referer = request.getHeader("Referer");
 	    return "redirect:"+ referer;
 	}

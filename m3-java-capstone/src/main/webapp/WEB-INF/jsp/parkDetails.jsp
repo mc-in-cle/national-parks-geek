@@ -64,7 +64,6 @@
 				</c:if>
 				<c:url var="weatherImgUrl" value="img/weather/${imageName}.png" />
 				<img class="weatherImg" src="${weatherImgUrl}" alt="${imageName}" />
-				
 			 <p class="high">High: ${today.getHigh(tempPreference)} </p>
 			<p class="low"> Low: ${today.getLow(tempPreference)} </p>
 			
@@ -87,5 +86,6 @@
 		</div>
 			
 		</div> 
+	</div>
 </body>
 </html>

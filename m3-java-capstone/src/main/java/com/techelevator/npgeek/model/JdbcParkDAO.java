@@ -46,16 +46,17 @@ public class JdbcParkDAO implements ParkDAO {
 	}
 	
 	@Override
-	public Map<Park, Integer> surveyResults() {
-		Map<Park, Integer> surveyResults = new HashMap<>();
+	public List<Park> surveyResults() {
+		List<Park> surveyResults = new ArrayList<>();
 		String sqlQuery = "SELECT park.*, count(*) as ct FROM "
-				+ "park INNER JOIN survey_result ON park.parkcode = survey_results.parkcode "
-				+ "GROUP BY parkcode ORDER BY ct DESC";
+				+ "park INNER JOIN survey_result ON park.parkcode = survey_result.parkcode "
+				+ "GROUP BY park.parkcode ORDER BY ct DESC, parkname";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlQuery);
 		while (results.next()) {
 			int voteCount = results.getInt("ct");
 			Park p = getParkFromRow(results);
-			surveyResults.put(p,voteCount);
+			p.setVotes(voteCount);
+			surveyResults.add(p);
 		}
 		return surveyResults;
 	}

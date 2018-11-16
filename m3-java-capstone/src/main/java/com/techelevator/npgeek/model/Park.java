@@ -17,6 +17,7 @@ public class Park {
 	private int entryFee;
 	private int numberOfAnimalSpecies;
 	private float trailMiles;
+	private int votes;
 	
 	
 	public float getTrailMiles() {
@@ -108,6 +109,12 @@ public class Park {
 	}
 	public void setNumberOfAnimalSpecies(int numberOfAnimalSpecies) {
 		this.numberOfAnimalSpecies = numberOfAnimalSpecies;
+	}
+	public int getVotes() {
+		return votes;
+	}
+	public void setVotes(int votes) {
+		this.votes = votes;
 	}
 	
 }

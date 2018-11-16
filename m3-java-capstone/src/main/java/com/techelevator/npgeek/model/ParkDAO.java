@@ -9,5 +9,5 @@ public interface ParkDAO {
 
 	public Park getPark(String parkCode);
 
-	public Map<Park, Integer> surveyResults();
+	public List<Park> surveyResults();
 }
